@@ -21,6 +21,7 @@ decoded = vitdec(encoded,trellis,3,'trunc','hard')
 isequal(decoded,bitsI)
 
 
-dddddd
-
+%rfnrnfnrnfr
+%zoeoeoe
 %101 111
+%100110101
