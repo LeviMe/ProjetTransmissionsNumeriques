@@ -5,3 +5,5 @@ signalBruiteI = signalI + sigma.*rand(1, length(signalI));
 signalBruiteQ = signalQ + sigma.*rand(1, length(signalQ));
 
 end
+
+% ceci est une modification
