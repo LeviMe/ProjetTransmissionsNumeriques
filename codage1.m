@@ -1,10 +1,4 @@
 
-% Récupérer la syntaxe des fonctions nécessaires
-% Télécharger le package atom pour avoir la coloration matlab qui fonctionne 
-% Se concerter avec Jonathan pour avoir des informations.  
-% Effacer ces lignes. 
-% Tout git 
-
 %Le fichier codage1.m contient toutes les fonctions de codage canal et de décodage
 %d'une séquence de bits prévus par l'énoncé qui sont dans l'ordre 
 % RS --- entrelaceur --- Convolutif ---- poinçonnage
