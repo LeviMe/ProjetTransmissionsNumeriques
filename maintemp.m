@@ -5,16 +5,24 @@ nb_bits=20480;
 N=4; % nombre d'échantillons par symbole
 Te=64; % Période d'échantillonage
 Ts=N*Te; % période symbole
-alpha = 0.35; %alpha du filtre de mise en forme (cos
+alpha = 0.35; %alpha du filtre de mise en forme (cosinus surrelevé)
 
-
+%les deux listes définis ici contiendront les valeurs 
+% des taux d'erreurs binaires 
 taux_d_erreursI = [];
 taux_d_erreursQ = [];
+
+codage=false
 
 for dB = -4:0
     
     %bits de base
     bits = 2*[randi([0,1],1,nb_bits*2)]-1;
+	
+	if (codage)
+		bits=Codage(bits)
+	end
+	
     %Mapping complexe
     bitsI = bits(1:2:end);
     bitsQ = bits(2:2:end);
@@ -64,6 +72,12 @@ for dB = -4:0
     %decision par detecteur à seuil
     bits_decidesI=sign(signal_detecteI);
     bits_decidesQ=sign(signal_detecteQ);
+	
+	if (codage)
+		bits_decidesI=Decodage(bits_decidesI)
+		bits_decidesQ=Decodage(bits_decidesQ)
+	end
+	
     %Taux d'erreur confirmé nul en l'absence de bruit
     taux_d_erreurI=sum(abs(bits_decidesI-bitsI))/nb_bits
     taux_d_erreurQ=sum(abs(bits_decidesQ-bitsQ))/nb_bits
@@ -75,7 +89,4 @@ end
 
 taux_d_erreursI
 taux_d_erreursQ
-%tehehe
-
-%teheheh2
 

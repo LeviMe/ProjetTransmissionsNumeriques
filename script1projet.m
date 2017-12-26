@@ -12,11 +12,11 @@ bitsI=2*[randi([0,1],1,nb_bits)]-1;
 bitsQ=2*[randi([0,1],1,nb_bits)]-1;
 
 
-%Echantillonage du filtre de mise en forme en racine 
+%Echantillonage du filtre de mise en forme en racine
 % de cosinus surrelevé en vue de sa convolution par le signal d'entrée.
 filtre_RCS=rcosdesign(0.35,10,Te,'sqrt');
-%convolution pour mise en forme. 
-%symboles = 
+%convolution pour mise en forme.
+%symboles =
 suite_diracs_ponderesI=[kron(bitsI,[1,zeros(1,Ts-1)]),zeros(1,nb_bits*Ts)];
 suite_diracs_ponderesQ=[kron(bitsQ,[1,zeros(1,Ts-1)]),zeros(1,nb_bits*Ts)];
 %size(suite_diracs_ponderesI)
@@ -38,7 +38,7 @@ A=offset+Ts:Ts:nb_bits*(Ts)+offset+1;
 %size(signal_recuI)
 
 %Affichage de trois figures, le signal d'entrée, le signal reçu et les
-%bits correspondants aux valeurs aux instants d'échantillonage. 
+%bits correspondants aux valeurs aux instants d'échantillonage.
 figure(1);
 hold on;
 plot(signal_mis_en_formeI(1:1:5000));
@@ -53,4 +53,3 @@ signal_detecteI=(1/max(signal_recuI(A)))*signal_recuI(A);
 bits_decides=round(signal_detecteI)
 %Taux d'erreur confirmé nul en l'absence de bruit
 taux_d_erreur=sum(bits_decides-bitsI)/nb_bits
-
