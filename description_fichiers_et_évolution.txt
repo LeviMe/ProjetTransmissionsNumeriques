@@ -4,23 +4,15 @@ Je reprend le projet de Traitement du signal le 25.12.2017
 
 Inventaire des fichiers.
 
-AB.m nous a été distribué par la prof pour la partie 4.1 (synchronisation) afin du 
-calcul des coefficients d'un filtre du second ordre.
+AB.m nous a été distribué par la prof pour la partie 4.1 (synchronisation) afin du calcul des coefficients d'un filtre du second ordre.
 
-canal.m est une fonction créé par Jonathan pour y inclure une fonction Canal dont la seule fonction
-(sans jeu de mot) sera de rajouter du bruit à un signal d'entrée, lequel est -pour le moment- décomposé en 
-ses portions réels et complexes (redondance à éviter).
+canal.m est une fonction créé par Jonathan pour y inclure une fonction Canal dont la seule fonction (sans jeu de mot) sera de rajouter du bruit à un signal d'entrée, lequel est -pour le moment- décomposé en ses portions réels et complexes (redondance à éviter).
 
-script1projet.m est mon premier script qui contient la première partie, i.e. la mise en place des filtres d'emission et réception en l'absence de bruit. Le décodage avec taux d'erreur nul.
+script1projet.m est mon premier script qui contient la première partie, i.e. la mise en place des filtres d'emission et réception en l'absence de bruit. Le décodage avec taux d'erreur nul. Il n'est pas prévu pour figurer dans le rapport.
 
 codage1.m est la portion de codage canal avec code convolutif que j'ai conçu dans un deuxième temps.
 
-Jonathan ambitionne (à juste titre) de diviser le code en de multiples fonctions lesquels seront invoquées depuis un seule et même fichier principal; celui-ci porte à ce jour le nom de maintemp.m. Il doit être compléter et modifier pour extraire encore plus de fonctions. 
+Jonathan ambitionne (à juste titre) de diviser le code en de multiples fonctions lesquels seront invoquées depuis un seule et même fichier principal; celui-ci porte à ce jour le nom de maintemp.m. Il doit être compléter et modifier pour extraire encore plus de fonctions.
 
-Afin d'avancer dans le code, tout en courant le moins de risques possible pour le déboggage (sachant que je n'ai pas d'interpréteur Matlab avec moi). je vais procéder en créant des fonctions extérieures et en les invoquants à l'intérieur du maintemp. 
-Il est bien entendu que le code final du projet tout entier (utile à la conception du rapport) n'est pas prévu nécessairement pour être executable d'un seul coup. 
-Il faut pour cela modifier qq détails comme l'inversion de la valeur de booléens. 
-
-
-
-
+Afin d'avancer dans le code, tout en courant le moins de risques possible pour le déboggage à venir (sachant que je n'ai pas d'interpréteur Matlab avec moi), je vais procéder en créant des fonctions extérieures et en les invoquants à l'intérieur du maintemp.
+Il est bien entendu que le code final du projet tout entier (utile à la conception du rapport) n'est pas prévu nécessairement pour être executable d'un seul coup; Il faut pour cela modifier qq détails comme l'inversion de la valeur de booléens.
