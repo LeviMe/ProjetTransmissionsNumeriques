@@ -1,7 +1,7 @@
 clear all; close all; clc;
 warning('off', 'all');
 
-nb_bits=20480;
+nb_bits=2048;
 N=4; % nombre d'échantillons par symbole
 Te=64; % Période d'échantillonage
 Ts=N*Te; % période symbole
