@@ -16,3 +16,11 @@ Jonathan ambitionne (à juste titre) de diviser le code en de multiples fonction
 
 Afin d'avancer dans le code, tout en courant le moins de risques possible pour le déboggage à venir (sachant que je n'ai pas d'interpréteur Matlab avec moi), je vais procéder en créant des fonctions extérieures et en les invoquants à l'intérieur du maintemp.
 Il est bien entendu que le code final du projet tout entier (utile à la conception du rapport) n'est pas prévu nécessairement pour être executable d'un seul coup; Il faut pour cela modifier qq détails comme l'inversion de la valeur de booléens.
+
+
+//Ajouts de Jonathan au 9/01
+choses encore à faire sur le projet et répartition possible à cette date : (le premier nom est une proposition de qui a priorité)
+-corriger le bruit canal -> Jonathan
+-debugger la partie 3 -> Jonathan ou lévi
+-4.1.1 et 4.1.2 : compréhension et calculs sur comment faire le filtre -> Lévi  et/ou Jonathan
+-implantation matlab de 4.1.1, 4.1.2, 4.1.2 4.2 -> Jonathan  et/ou Lévi 
