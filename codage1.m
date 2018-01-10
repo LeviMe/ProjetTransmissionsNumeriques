@@ -8,7 +8,6 @@
 % RS(204,188) à partir de 		comm.RSEncoder.m, comm.RSDecoder et step.m
 % (des)entrelaceur sans paramètres précis de l'énoncé via  convintrlv.m et convdeintrlv.m
 
-
 % La fonction poly2trellis sert à modéliser 'informatiquement' la notion
 % de code convolutif et de treillis associé.
 % Ses arguments sont deux matrices.
@@ -21,9 +20,7 @@
 %   pour n symboles de sortie à une itération, qu'elle est le bouclage via
 %   un polynome sur les valeurs courante et précédente du premier symbole
 %   d'entrée + à (la ligne suivante) le bouclage sur le deuxième + (à la
-%   k-ième ligne) le bouclage sur le k-ième.
-%
-
+%   k-ième ligne) le bouclage sur le k-ième
 
 
 %test bon fonctionnement. A retirer pour le rendu final même si cela figure au programme de l'enoncé
@@ -33,28 +30,35 @@ encoded=convenc(bitsI,trellis);
 decoded = vitdec(encoded,trellis,3,'trunc','hard');
 isequal(decoded,bitsI);
 
-%paramètres du code qui suit
-RS_encoding = false;
-interleaving = false;
-puncturing = false;
-decoding_mode = 'hard'; %='soft'
-puncturing_matrix = [1 1 0 1];
-trellis = poly2trellis([7],[171 133]);
-
-N = 255;
-K = 239;
-S = 188;
-M = 256;
-gp = rsgenpoly(N,K,[],0);
-enc = comm.RSEncoder(N,K,gp,S);
-dec = comm.RSDecoder(N,K,gp,S);
-
 % concernant le poinçonnage la fonction convenc accepte les arguments suivants
 % code = convenc(msg,trellis,puncpat) d'ou la syntaxe employée.
 
-function [bits_codes] = Codage(bits)
-	bits_codes = bits;
+    RS_encoding = true;
+    interleaving = false;
+    puncturing = false;
 
+
+bits=[randi([0,1],1,188*8)]
+code = Codage(bits);
+decode = Decodage(code);
+
+function [bits_codes] = Codage(bits)
+    %paramètres du code qui suit
+    RS_encoding = true;
+    interleaving = false;
+    puncturing = false;
+    decoding_mode = 'hard'; %='soft'
+    puncturing_matrix = [1 1 0 1];
+    trellis = poly2trellis([7],[171 133]);
+
+    N = 255;
+    K = 239;
+    S = 188;
+    M = 256;
+    gp = rsgenpoly(N,K,[],0);
+    enc = comm.RSEncoder(N,K,gp,S);
+    dec = comm.RSDecoder(N,K,gp,S);
+    text = "affichage"
 	if RS_encoding
 		% Le code RS est non-binaire, i.e. son entrée n'est pas composée de blocs de bits.
 		%L'exemple du tutoriel prenait exactement le même encodeur et appliquait sur les bits la fonction bi2de(data) qui selon toute évidence signifie une conversion binaire vers décimal. data étant alors un vecteur 188 x 8 de bits aléatoire, 8=log2(M=256). Les nombres décimaux à coder étaient -me semble-t-il- la valeur de l'octet formé par chacune des colonnes de data.
@@ -62,7 +66,10 @@ function [bits_codes] = Codage(bits)
 			% 1. Trouver la fonction de ré-arrangement de matrices n*1==> n/8 * 8
 			%	2. Appliquer bi2de
 		% Si correction est trouvé, l'appliquer de façon identique à la fonction de décodage. Et changer le nom des variables puisque la sortie n'est alors plus composée de bits.
-		symboles=bi2de(reshape(bits,8,[]));
+		reshape(bits,[],8)
+        symboles=bi2de(reshape(bits,[],8))
+        
+        text = "Symboles définis"
 		%<==> bi2de(reshape(bits,[8,size(bits)/8]));
 		bits_codes = step(enc,symboles);
 	end
@@ -72,18 +79,34 @@ function [bits_codes] = Codage(bits)
 		bits_codes = convintrlv(bits_codes, S,3);
 	end
 
-	if puncturing
-		bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
-	else
-		bits_codes = convenc(bits_codes,trellis);
-	end
+    if puncturing
+        bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
+    else
+        bits_codes = convenc(bits_codes,trellis);
+    end
+
+    
 end
 
 %revoir la syntaxe de l'introduction du poinçonnage dans le vitdec; je n'ai aucune certitude
 
 function [bits_decodes] = Decodage(bits_codes)
-	bits_decodes = bits_codes
+    %paramètres du code qui suit
+    RS_encoding = true;
+    interleaving = false;
+    puncturing = false;
+    decoding_mode = 'hard'; %='soft'
+    puncturing_matrix = [1 1 0 1];
+    trellis = poly2trellis([7],[171 133]);
 
+    N = 255;
+    K = 239;
+    S = 188;
+    M = 256;
+    gp = rsgenpoly(N,K,[],0);
+    enc = comm.RSEncoder(N,K,gp,S);
+    dec = comm.RSDecoder(N,K,gp,S);
+    
 	if RS_encoding
 		bits_decodes = step(dec,bits_codes);
 	end
@@ -97,3 +120,11 @@ function [bits_decodes] = Decodage(bits_codes)
 		bits_decodes = vitdec(bits_decodes,trellis,3,'trunc',decoding_mode);
 	end
 end
+
+
+
+
+
+
+
+
