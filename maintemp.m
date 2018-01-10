@@ -12,15 +12,15 @@ alpha = 0.35; %alpha du filtre de mise en forme (cosinus surrelevé)
 taux_d_erreursI = [];
 taux_d_erreursQ = [];
 
-codage=false
+codage=true;
 
-for dB = -4:0
+for dB = -40:20:40
 
     %bits de base
     bits = 2*[randi([0,1],1,nb_bits*2)]-1;
 
 	if (codage)
-		bits=Codage(bits)
+		bits=codage(bits)
 	end
 
     %Mapping complexe
@@ -45,7 +45,7 @@ for dB = -4:0
     %[signal_mis_en_formeI, signal_mis_en_formeQ] = Modulation(bits, alpha, Ts, Te)
 
     %ajout du bruit du canal
-    [signal_bruiteI, signal_bruiteQ] = canal(dB, signal_mis_en_formeI, signal_mis_en_formeQ);
+    [signal_bruiteI, signal_bruiteQ] = canal(-20, signal_mis_en_formeI, signal_mis_en_formeQ);
 
 
     %Convolution par un filtre de reception
@@ -83,7 +83,6 @@ for dB = -4:0
 
     taux_d_erreursI(length(taux_d_erreursI)+1) = taux_d_erreurI;
     taux_d_erreursQ(length(taux_d_erreursQ)+1) = taux_d_erreurQ;
-
 end
 
 taux_d_erreursI
