@@ -28,7 +28,7 @@ bitsI=[randi([0,1],1,10)];
 trellis = poly2trellis([7],[171 133]);
 encoded=convenc(bitsI,trellis);
 decoded = vitdec(encoded,trellis,3,'trunc','hard');
-isequal(decoded,bitsI);
+isequal(decoded,bitsI)
 
 % concernant le poinçonnage la fonction convenc accepte les arguments suivants
 % code = convenc(msg,trellis,puncpat) d'ou la syntaxe employée.
@@ -36,17 +36,26 @@ isequal(decoded,bitsI);
 
 
 
-bits=[randi([0,1],1,1000)];
-code = Codage(bits);
-decode = Decodage(code);
+bits=[randi([0,1],188*8,1)];
 
-size(code)
-size(decode)
+
+"size bits   "+int2str(size(bits))
+
+code = Codage(bits);
+"size code   " +int2str(size(code))
+
+decode = Decodage(code);
+"size decode "+int2str(size(decode))
+
+
+
+isequal(decode, bits)
+%size(decode)
 
 function [bits_codes] = Codage(bits)
     RS_encoding = true;
-    interleaving = true;
-    puncturing = true;
+    interleaving = false;
+    puncturing = false;
     %paramètres du code qui suit
 
     decoding_mode = 'hard'; %='soft'
@@ -58,11 +67,11 @@ function [bits_codes] = Codage(bits)
     % pour atteindre une taille totale multiple de  188*8
     
     % Je ne me suis pas occupe du dépadding !!!!!!!
-    lcmmmm=188*8;
-    taille=size(bits,2);
-    if (mod(taille,lcmmmm)~=0)
-        bits=[bits zeros(1, lcmmmm*(floor(taille/lcmmmm)+1)-taille)];
-    end
+%     lcmmmm=188*8;
+%     taille=size(bits,2);
+%     if (mod(taille,lcmmmm)~=0)
+%         bits=[bits zeros(1, lcmmmm*(floor(taille/lcmmmm)+1)-taille)];
+%     end
   
     
     
@@ -81,7 +90,7 @@ function [bits_codes] = Codage(bits)
 			% 1. Trouver la fonction de ré-arrangement de matrices n*1==> n/8 * 8
 			%	2. Appliquer bi2de
 		% Si correction est trouvé, l'appliquer de façon identique à la fonction de décodage. Et changer le nom des variables puisque la sortie n'est alors plus composée de bits.
-		reshape(bits,[],8);
+		%reshape(bits,[],8); 
         symboles=bi2de(reshape(bits,[],8));
 		symboles_codes = step(enc,symboles);
         bits_codes = reshape(de2bi(symboles_codes),[],1);
@@ -92,7 +101,7 @@ function [bits_codes] = Codage(bits)
 		bits_codes = convintrlv(bits_codes, S,3);
     end
 
-    size(bits_codes)
+   % "size bits codes   "+int2str(size(bits_codes)) 
     
     if puncturing
         bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
@@ -108,8 +117,8 @@ end
 function [bits_decodes] = Decodage(bits_codes)
     %paramètres du code qui suit
      RS_encoding = true;
-    interleaving = true;
-    puncturing = true;
+    interleaving = false;
+    puncturing = false;
     decoding_mode = 'hard'; %='soft'
     puncturing_matrix = [1 1 0 1];
     trellis = poly2trellis([7],[171 133]);

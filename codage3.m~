@@ -1,0 +1,8 @@
+
+
+bits=[randi([0,1],1,100)];
+bits_codes = convintrlv(bits, 5,3)
+bits_decodes = convdeintrlv(bits_codes,5,3)
+
+
+isequal(bits,bits_decodes)
