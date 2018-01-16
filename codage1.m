@@ -33,24 +33,39 @@ isequal(decoded,bitsI);
 % concernant le poinçonnage la fonction convenc accepte les arguments suivants
 % code = convenc(msg,trellis,puncpat) d'ou la syntaxe employée.
 
-    RS_encoding = true;
-    interleaving = false;
-    puncturing = false;
 
 
-bits=[randi([0,1],1,188*8)]
+
+bits=[randi([0,1],1,1000)];
 code = Codage(bits);
 decode = Decodage(code);
 
+size(code)
+size(decode)
+
 function [bits_codes] = Codage(bits)
-    %paramètres du code qui suit
     RS_encoding = true;
-    interleaving = false;
-    puncturing = false;
+    interleaving = true;
+    puncturing = true;
+    %paramètres du code qui suit
+
     decoding_mode = 'hard'; %='soft'
     puncturing_matrix = [1 1 0 1];
     trellis = poly2trellis([7],[171 133]);
 
+    
+    %Padding pour le cas général à l'entier le plus proche 
+    % pour atteindre une taille totale multiple de  188*8
+    
+    % Je ne me suis pas occupe du dépadding !!!!!!!
+    lcmmmm=188*8;
+    taille=size(bits,2);
+    if (mod(taille,lcmmmm)~=0)
+        bits=[bits zeros(1, lcmmmm*(floor(taille/lcmmmm)+1)-taille)];
+    end
+  
+    
+    
     N = 255;
     K = 239;
     S = 188;
@@ -58,7 +73,7 @@ function [bits_codes] = Codage(bits)
     gp = rsgenpoly(N,K,[],0);
     enc = comm.RSEncoder(N,K,gp,S);
     dec = comm.RSDecoder(N,K,gp,S);
-    text = "affichage"
+   
 	if RS_encoding
 		% Le code RS est non-binaire, i.e. son entrée n'est pas composée de blocs de bits.
 		%L'exemple du tutoriel prenait exactement le même encodeur et appliquait sur les bits la fonction bi2de(data) qui selon toute évidence signifie une conversion binaire vers décimal. data étant alors un vecteur 188 x 8 de bits aléatoire, 8=log2(M=256). Les nombres décimaux à coder étaient -me semble-t-il- la valeur de l'octet formé par chacune des colonnes de data.
@@ -66,19 +81,19 @@ function [bits_codes] = Codage(bits)
 			% 1. Trouver la fonction de ré-arrangement de matrices n*1==> n/8 * 8
 			%	2. Appliquer bi2de
 		% Si correction est trouvé, l'appliquer de façon identique à la fonction de décodage. Et changer le nom des variables puisque la sortie n'est alors plus composée de bits.
-		reshape(bits,[],8)
-        symboles=bi2de(reshape(bits,[],8))
-        
-        text = "Symboles définis"
-		%<==> bi2de(reshape(bits,[8,size(bits)/8]));
-		bits_codes = step(enc,symboles);
-	end
+		reshape(bits,[],8);
+        symboles=bi2de(reshape(bits,[],8));
+		symboles_codes = step(enc,symboles);
+        bits_codes = reshape(de2bi(symboles_codes),[],1);
+    end
 % L'entrelacement convolutif dépend de deux paramètres, la tailles des blocs à entrelacer que j'ai fixé ici à S=188 (il me semble que cette valeur soit correct) et le second appelé 'slope' dont les multiples définissent les retards de chacun des composants du bloc à coder. Je pense que son choix est arbitraire dans le cadre de ce projet, mais cela reste à verifier.
 
 	if interleaving
 		bits_codes = convintrlv(bits_codes, S,3);
-	end
+    end
 
+    size(bits_codes)
+    
     if puncturing
         bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
     else
@@ -92,9 +107,9 @@ end
 
 function [bits_decodes] = Decodage(bits_codes)
     %paramètres du code qui suit
-    RS_encoding = true;
-    interleaving = false;
-    puncturing = false;
+     RS_encoding = true;
+    interleaving = true;
+    puncturing = true;
     decoding_mode = 'hard'; %='soft'
     puncturing_matrix = [1 1 0 1];
     trellis = poly2trellis([7],[171 133]);
