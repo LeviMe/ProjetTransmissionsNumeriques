@@ -1,17 +1,16 @@
 
 bits=[randi([0,1],188*8,1)];
-"size bits   "+int2str(size(bits));
+%"size bits   "+int2str(size(bits));
 code = Codage(bits);
-
-"size code   " +int2str(size(code));
+%"size code   " +int2str(size(code));
 decode = Decodage(code);
-"size decode "+int2str(size(decode));
+%"size decode "+int2str(size(decode));
 isequal(decode, bits)
-% [bits(1:30) decode(1:30)]
+
 
 function [bits_codes] = Codage(bits)
     RS_encoding = 1;
-    interleaving = 0;
+    interleaving = 1;
     puncturing = 1;
     convencoding= 1; 
     N = 255;
@@ -24,6 +23,9 @@ function [bits_codes] = Codage(bits)
     puncturing_matrix = [1 1 0 1];
     trellis = poly2trellis([7],[171 133]);
     
+    nrows = 17; slope = 12; 
+    D = nrows*(nrows-1)*slope; 
+    
     bits_codes=bits;
     
 	if RS_encoding
@@ -32,7 +34,7 @@ function [bits_codes] = Codage(bits)
         bits_codes = reshape(de2bi(symboles_codes),[],1);
     end
     if interleaving
-		bits_codes = convintrlv(bits_codes, 10,4);
+		bits_codes = convintrlv([bits_codes;zeros(D,1)], nrows,slope);
     end
 
    % "size bits codes   "+int2str(size(bits_codes)) 
@@ -53,7 +55,7 @@ end
 function [bits_decodes] = Decodage(bits_codes)
     %paramètres du code qui suit
      RS_encoding = 1;
-     interleaving = 0;
+     interleaving = 1;
      puncturing = 1;
      convencoding=1 ;
     N = 255;
@@ -65,7 +67,10 @@ function [bits_decodes] = Decodage(bits_codes)
     decoding_mode = 'hard'; %='soft'
     puncturing_matrix = [1 1 0 1];
     trellis = poly2trellis([7],[171 133]);
- 
+    
+    nrows = 17; slope = 12; 
+    D = nrows*(nrows-1)*slope; 
+    
     bits_decodes=bits_codes;
     
     if puncturing
@@ -79,7 +84,8 @@ function [bits_decodes] = Decodage(bits_codes)
     end
     
 	if interleaving
-		bits_decodes = convdeintrlv(bits_decodes,10,4);
+		bits_decodes = convdeintrlv(bits_decodes,nrows,slope);
+        bits_decodes=bits_decodes(D+1:end);
     end
     
     if RS_encoding

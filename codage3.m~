@@ -1,8 +1,51 @@
+% x = randi([0 63],20,1); % Original data
+% nrows = 3; slope = 2; % Interleaver parameters
+% D = nrows*(nrows-1)*slope; % Delay of interleaver/deinterleaver pair
+% hInt   = comm.ConvolutionalInterleaver('NumRegisters', nrows, ...
+%                     'RegisterLengthStep', slope);
+% hDeint = comm.ConvolutionalDeinterleaver('NumRegisters', nrows, ...
+%                     'RegisterLengthStep', slope);
+% 
+% % First approach.
+% x_padded = [x; zeros(D,1)]; % Pad x at the end before interleaving.
+% a1 = step(hInt, x_padded); % Interleave padded data.
+% 
+% b1 = step(hDeint, a1);
+% % Omit input padding and the first D symbols of the recovered data and
+% % compare
+% servec1 = step(comm.ErrorRate('ReceiveDelay',D),x_padded,b1);
+% ser1 = servec1(1)
+% 
+% % Second approach.
+% release(hInt); release(hDeint)
+% a2 = step(hInt,x); % Interleave original data.
+% b2 = step(hDeint,a2);
+% 
+% 
+% % Omit the last D symbols of the original data and the first D symbols of
+% % the recovered data and compare.
+% servec2 = step(comm.ErrorRate('ReceiveDelay',D),x,b2);
+% ser2 = servec2(1)
 
 
-bits=[randi([0,1],1,100)];
-bits_codes = convintrlv(bits, 5,3)
-bits_decodes = convdeintrlv(bits_codes,5,3)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+x = randi([0 63],2000,1); % Original data
+nrows = 3; slope = 2; % Interleaver parameters
+D = nrows*(nrows-1)*slope; % Delay of interleaver/deinterleaver pair
 
 
-isequal(bits,bits_decodes)
+% First approach.
+x_padded = [x; zeros(D,1)]; % Pad x at the end before interleaving.
+a1 = convintrlv(x_padded, 3,2); % Interleave padded data.
+
+b1 = convdeintrlv(a1, 3,2);
+b1_unpadded=
+% Omit input padding and the first D symbols of the recovered data and
+% compare
+servec1 = step(comm.ErrorRate('ReceiveDelay',D),x_padded,b1);
+ser1 = servec1(1)
+
+
+
+
