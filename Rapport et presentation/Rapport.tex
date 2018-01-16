@@ -11,7 +11,7 @@
 \title{Rapport projet Transmissions numériques}
 \author{MEGUIRA Levi \\
 	CLAYBROUGH Jonathan}
-\usepackage{enumitem}
+
 
 
 \usepackage{pgfplots}
@@ -54,7 +54,12 @@ L'implémentation de cette première partie se fait avec une chaine passe-bas é
 %title=un titre à modifier,
 %xlabel={$f$},
 %ylabel={$g$}]
-%\addplot table[mark=none,x expr =\coordindex+1, y index=0] {signal_filtre.txt};
+%\addplot table[mark=none,x expr =\coordindex+1, y index=0] {fichier.txt}; 
+%cas d'un tableau à une entrée, l'indice (#de ligne) de la valeur étant son abcisse
+%\addplot table[mark=none,x=abs, y=ord] {fichier.txt}; 
+%cas d'un tableau à plus de deux entrées, avec tracées des colonnes etiquetées à la première ligne respectivement par abs et ord.
+%\addplot table[mark=none] {fichier.txt}; 
+%cas d'un tableau à deux entrées.
 %\end{axis}
 %\end{tikzpicture}
 %\end{center}
