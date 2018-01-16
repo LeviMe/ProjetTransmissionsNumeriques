@@ -1,4 +1,4 @@
-function [ signalBruiteI, signalBruiteQ]= canal( dB, signalI, signalQ)
+function [ signalBruite]= canal( dB, signal)
 %CANAL simule l'ajout du bruit lors du passage du signal a travers le canal AWGN
 %   Addition du bruit au signal avec le dB specifie
 
@@ -6,18 +6,11 @@ function [ signalBruiteI, signalBruiteQ]= canal( dB, signalI, signalQ)
 %et somme du carre de h... = 1 car on a norme
 %Es=2*Eb donc sigma^2 = 1./(4.*Eb/N0)
 % et Eb/N0dB = 10log(Eb/N0) d'ou Eb/n0 = 10^(dB/10)
-sigma = sqrt(1./(4.*10.^(dB/10)))
-
-puissance_log = 10*log(sigma);
-length(signalI)
-bruitI = wgn(1, length(signalI),puissance_log);
-bruitQ = wgn(1, length(signalQ),puissance_log);
-%bruitcomplexe = bruitI + j*bruitQ ; 
-
-signalBruiteI = signalI + bruitI;
-signalBruiteQ = signalQ + bruitQ;
-
-%signalBruite = signalBruiteI + j * signalBruiteQ
-
+Eb_N0 = 10^(dB/10);
+sigma = 1 / (2 * 10 ^ (Eb_N0 / 10));
+bruit_I = sqrt(sigma) * randn(1, length(signal));
+bruit_Q = sqrt(sigma) * randn(1, length(signal));
+bruit = bruit_I + 1j * bruit_Q;
+signalBruite = signal + bruit;
 
 end
