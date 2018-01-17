@@ -12,8 +12,6 @@
 \author{MEGUIRA Levi \\
 	CLAYBROUGH Jonathan}
 
-
-
 \usepackage{pgfplots,tcolorbox,listings}
 \tcbuselibrary{fitting}
 \tcbuselibrary{skins}
@@ -22,7 +20,6 @@
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
-
 
 \lstset{language=Matlab,%
     %basicstyle=\color{red},
@@ -55,9 +52,6 @@ keywordstyle={\ttfamily \color{blue} \bfseries},
 stringstyle=\color{blue}}
 }
 
-
-
-
 \newcommand{\X}{\mathcal{X}}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\N}{\mathbb{N}}
@@ -66,12 +60,9 @@ stringstyle=\color{blue}}
 \begin{document}
 \maketitle
 
-
 \begin{comment}
 	\textbf{Remarque importante: Notre chaine de transmission ne \emph{donne pas l'air} de transmettre \emph{un} signal complexe mais bien deux signaux distincts qui subissent exactement les mêmes opérations. Afin de respecter au possible le schéma de l'énoncé ainsi que le principe de ne jamais répeter de code en Matlab, il importe de créer un signal numérique \emph{réelement complexe} (sans jeu de mot) à partir des bits de départ et de transmettre un seul et même objet d'une extrémité à l'autre. \\ Le caractère universel des fonctions Matlab suffit à faire appliquer toutes les fonctions utilisés dans ce code à un vecteur complexe définie par \texttt{symboles=bitsI+j*bitsQ}}
 \end{comment}
-
-
 
 \section*{Contexte}
 Ce projet de communication numérique vise à simuler sous Matlab une chaîne de transmissions au standard DVB-S. Il se divise en trois grandes parties que sont:
@@ -91,8 +82,6 @@ Cette répartition fut possible grâce à la structure modulaire du projet. Tout
 
 \section{Chaine de base}
 
-
-
 \section{Modulation-démodulation}
 L'implémentation de cette première partie se fait avec une chaine passe-bas équivalente à la chaine de transmission sur porteuse du cas simulé. Elle envoie un signal complexe plutôt que deux signaux réels en quadrature, et ce de la façon suivante:
 \begin{enumerate}
@@ -103,27 +92,7 @@ L'implémentation de cette première partie se fait avec une chaine passe-bas é
 	\item Enfin il est divisé en ses parties réelles et imaginaires puis passé par un détecteur à seuil pour prendre les décisions et retrouver les symboles QPSK d'emissions.
 \end{enumerate}
 
-
 \section{Bruit canal}
-Le canal est supposé créant du bruit blanc gaussien. La fonction canal ajoute donc un bruit blanc gaussien complexe au signal complexe reçu avec le dB souhaité. \\
-Pour calculer la puissance du bruit : 
-
-$\sigma = 1$ (variance des symboles)
-On a pris une porte normée donc puissage de signal à 1 aussi.
-$Es=2 \times Eb$  donc $\ds \sigma^2 = \frac{1}{4.*Eb/N0}$
-et $$Eb/N0_dB = 10\log(Eb/N0) _4.*Eb/N0 \text{ d'où } Eb/n0 = 10^{(dB/10)}$$
-
-
-\begin{lstun}
-	function [ signalBruite]= canal( dB, signal)
-	Eb_N0 = 10^(dB/10);
-	sigma = 1 / (2 * 10 ^ (Eb_N0 / 10));
-	bruit_I = sqrt(sigma) * randn(1, length(signal));
-	bruit_Q = sqrt(sigma) * randn(1, length(signal));
-	bruit = bruit_I + 1j * bruit_Q;
-	signalBruite = signal + bruit;
-	end	
-\end{lstun}
 
 \section{Codage canal}
 Le codage canal se décompose en plusieurs parties que sont dans l'ordre:
@@ -183,7 +152,9 @@ end
 end
 \end{lstun}
 
-
+\subsection{Décodage}
+Le décodage se fait via une fonction éponyme qui effectue toutes les opérations duales de la chaine de codage dans l'ordre inverse. \\
+Son implémentation a été relativement simple compte-tenu du fait que Matlab fournis simultanément les couples de fonctions qui possèdent ainsi une syntaxe identique.
 
 \section{Retard de phase}
 Le retard de phase est relativement trivial à implémenter, puisqu'il suffit de prendre le signal complexe et de le multiplier par $e^{j \phi}$. 
@@ -232,11 +203,12 @@ Ayant implémenté la chaine de façon configurable, nous avons pu faire varier 
 On fait d'abord un parcours intégral 
 
 \section{Conclusion}
-Nous avons pu implémenter l'entièreté de la chaine de transmission et vérifier un certain nombre de résultats attendus. 
+
 
 \newpage
 
 \begin{verbatim}
+
 %raw Data
 taux d erreurs sans codage=
 
@@ -260,6 +232,7 @@ taux d erreurs avec RS, interleaving, convencoding  =
 taux d erreurs =
 
     0.2094    0.1934    0.1561    0.1106    0.0649
+
 \end{verbatim}
 
 
