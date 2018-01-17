@@ -86,14 +86,4 @@ function [bits_decodes] = Decodage(bits_codes)
         
 		bits_decodes = step(dec,bits_decodes);
 	end
-
-
 end
-
-
-
-
-
-
-
-
