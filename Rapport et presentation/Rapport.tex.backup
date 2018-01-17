@@ -34,17 +34,7 @@ Ce projet de communication numérique vise à simuler sous Matlab une chaîne de
 	\item Le codage canal avec code RS, poinçonnage et entrelacement.
 	\item La synchronisation avec une structure en boucle fermée pour corriger les erreurs de phases.
 \end{enumerate}
-
 \tableofcontents
-
-\section{Organisation du travail}
-
-\section{Structure du code}
-
-\section{Chaine de base}
-
-
-
 \section{Modulation-démodulation}
 L'implémentation de cette première partie se fait avec une chaine passe-bas équivalente à la chaine de transmission sur porteuse du cas simulé. Elle envoie un signal complexe plutôt que deux signaux réels en quadrature, et ce de la façon suivante:
 \begin{enumerate}
@@ -54,16 +44,6 @@ L'implémentation de cette première partie se fait avec une chaine passe-bas é
 	\item Le signal atteint le récepteur ou il est passé par un filtre adapté et échantionné aux instants optimaux.
 	\item Enfin il est divisé en ses parties réelles et imaginaires puis passé par un détecteur à seuil pour prendre les décisions et retrouver les symboles QPSK d'emissions.
 \end{enumerate}
-
-
-\section{Bruit canal}
-
-\section{Codage canal}
-
-\section{Retard de phase et correction}
-
-\section{Conclusion}
-
 
 \newpage
 
@@ -111,5 +91,5 @@ ylabel={$g$}]
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\section{conclusion}
+\section{conclusoin}
 \end{document}
