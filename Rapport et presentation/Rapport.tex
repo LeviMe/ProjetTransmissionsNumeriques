@@ -3,6 +3,7 @@
 
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm,mathrsfs}
+\usepackage{tcolorbox}
  
 
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
@@ -24,20 +25,25 @@
 \begin{document}
 \maketitle
 
+\begin{comment}
+	\textbf{Remarque importante: Notre chaine de transmission ne \emph{donne pas l'air} de transmettre \emph{un} signal complexe mais bien deux signaux distincts qui subissent exactement les mêmes opérations. Afin de respecter au possible le schéma de l'énoncé ainsi que le principe de ne jamais répeter de code en Matlab, il importe de créer un signal numérique \emph{réelement complexe} (sans jeu de mot) à partir des bits de départ et de transmettre un seul et même objet d'une extrémité à l'autre. \\ Le caractère universel des fonctions Matlab suffit à faire appliquer toutes les fonctions utilisés dans ce code à un vecteur complexe définie par \texttt{symboles=bitsI+j*bitsQ}}
+\end{comment}
 
-\textbf{Remarque importante: Notre chaine de transmission ne \emph{donne pas l'air} de transmettre \emph{un} signal complexe mais bien deux signaux distincts qui subissent exactement les mêmes opérations. Afin de respecter au possible le schéma de l'énoncé ainsi que le principe de ne jamais répeter de code en Matlab, il importe de créer un signal numérique \emph{réelement complexe} (sans jeu de mot) à partir des bits de départ et de transmettre un seul et même objet d'une extrémité à l'autre. \\ Le caractère universel des fonctions Matlab suffit à faire appliquer toutes les fonctions utilisés dans ce code à un vecteur complexe définie par \texttt{symboles=bitsI+j*bitsQ}}
 
 \section*{Contexte}
 Ce projet de communication numérique vise à simuler sous Matlab une chaîne de transmissions au standard DVB-S. Il se divise en trois grandes parties que sont:
 \begin{enumerate}
 	\item La création d'un couple modulateur/ démodulateur.
-	\item Le codage canal avec code RS, poinçonnage et entrelacement.
+	\item Le codage canal avec code RS, code convolutif poinçonnage et entrelacement.
 	\item La synchronisation avec une structure en boucle fermée pour corriger les erreurs de phases.
 \end{enumerate}
 
 \tableofcontents
 
 \section{Organisation du travail}
+Nous étions un groupe de deux, alors plutôt que de travailler deux fois les mêmes choses, nous nous somme répartis les tâches à faire puisqu'elles étaient relativement indépendantes, puis avons mis en commun pour former la chaine entière. 
+\newline
+Cette répartition fut possible grâce à la structure modulaire du projet. 
 
 \section{Structure du code}
 
