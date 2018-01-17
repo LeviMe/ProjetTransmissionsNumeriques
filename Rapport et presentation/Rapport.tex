@@ -4,7 +4,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm,mathrsfs}
 \usepackage{tcolorbox}
- 
+
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage[francais]{babel}
 \newcommand{\ds}{\displaystyle}
@@ -18,6 +18,12 @@
 \tcbuselibrary{fitting}
 \tcbuselibrary{skins}
 \tcbuselibrary{listings}
+
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
 \lstset{language=Matlab,%
     %basicstyle=\color{red},
     breaklines=true,%
@@ -60,21 +66,11 @@ stringstyle=\color{blue}}
 \begin{document}
 \maketitle
 
+
 \begin{comment}
 	\textbf{Remarque importante: Notre chaine de transmission ne \emph{donne pas l'air} de transmettre \emph{un} signal complexe mais bien deux signaux distincts qui subissent exactement les mêmes opérations. Afin de respecter au possible le schéma de l'énoncé ainsi que le principe de ne jamais répeter de code en Matlab, il importe de créer un signal numérique \emph{réelement complexe} (sans jeu de mot) à partir des bits de départ et de transmettre un seul et même objet d'une extrémité à l'autre. \\ Le caractère universel des fonctions Matlab suffit à faire appliquer toutes les fonctions utilisés dans ce code à un vecteur complexe définie par \texttt{symboles=bitsI+j*bitsQ}}
 \end{comment}
 
-\begin{lstun}
-	if RS_encoding
-		symboles=bi2de(reshape(bits,[],8));
-		symboles_codes = step(enc,symboles);
-		bits_codes = reshape(de2bi(symboles_codes),[],1);
-	end
-	if interleaving
-		bits_codes = convintrlv([bits_codes;zeros(D,1)], nrows,slope);
-	end
-
-\end{lstun}
 
 
 \section*{Contexte}
@@ -88,17 +84,17 @@ Ce projet de communication numérique vise à simuler sous Matlab une chaîne de
 \tableofcontents
 
 \section{Organisation du travail}
-Nous étions un groupe de deux, alors plutôt que de travailler deux fois les mêmes choses, nous nous somme répartis les tâches à faire puisqu'elles étaient relativement indépendantes, puis avons mis en commun pour former la chaine entière. 
+Nous étions un groupe de deux, alors plutôt que de travailler deux fois les mêmes choses, nous nous somme répartis les tâches à faire puisqu'elles étaient relativement indépendantes, puis avons mis en commun pour former la chaine entière.
 \newline
 Cette répartition fut possible grâce à la structure modulaire du projet. Ainsi, Lévi a pu travailler dans la chaine de base à la modulation et démodulation. Pendant ce temps Jonathan a mis en place la structure du code et implémenté quelques fonctions extérieures (bruit du canal).
 Une fois la chaine de base faite, Lévi a implémenté les fonctions de codage et décodage pendant que Jonathan a implémenté l'erreur de phase et sa correction.
+
 
 \section{Structure du code}
 Un fichier main.m sert de point d'entrée au programme. Il contient dans un premier temps toutes les configurations pour le signal, le bruit, le codage, l'erreur et correction de phase. Dans un deuxième temps, il incorpore la chaine de transmission dans son entièreté, utilisant tels ou tels fonctions dépendant des paramètres de base. Les fonctions de bruits, codage, decodage, dephasage et correction de phase ont étés écrites séparement et sont appellées dans cette chaine. 
 
 
 %\section{Chaine de base}
-
 
 
 \section{Modulation-démodulation}
@@ -134,7 +130,30 @@ Le canal est supposé créant du bruit blanc gaussien. La fonction créée perme
 \end{lstun}
 
 \section{Codage canal}
+Le codage canal se décompose en plusieurs parties que sont dans l'ordre:
+\begin{enumerate}
+	\item Un code de Reed-Solomon réduit (204,188).
+	\item Un entrelaceur conforme au standard DVB-S c'est à dire de \emph{paramètres} $17$ et $12$.
+	\item Un code convolutif de polynômes générateur $171, 133$, qui est poinçonné via la matrice $[1,1,0,1]$.
+\end{enumerate}
+\ \\
+Toutes ces fonctions sont implémentés dans une seule est même fonction \texttt{codage} qui prend un vecteur de \texttt{bits} et tous les interrupteurs relatifs aux étapes de son fonctionnement et renvoie le vecteur codé.
 
+\begin{lstun}
+function [bits_codes] = codage(bits, RS_encoding, interleaving, puncturing, convencoding)
+\end{lstun}
+\subsection{Code de Reed Solomon}
+Le code de Reed-Solomon est par essence non-binaire; il prend en entrée des symboles qui dans notre cas seront des octets. Pour effectuer la conversion à partir de valeurs binaires, on va utiliser les fonctions \texttt{reshape} puis \texttt{bi2de} et obtenir ainsi le vecteur \texttt{symboles} huit fois plus cours. \\
+Ce vecteur sera encodé pour donner un vecteur \texttt{symboles\_codes} puis à son tour converti en valeurs binaires via une opération analogue à la première.
+
+\begin{lstun}
+	%comment
+	if RS_encoding
+		symboles=bi2de(reshape(bits,[],8));
+		symboles_codes = step(enc,symboles);
+		bits_codes = reshape(de2bi(symboles_codes),[],1);
+	end
+\end{lstun}
 
 
 
