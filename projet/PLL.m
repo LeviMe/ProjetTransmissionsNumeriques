@@ -24,4 +24,5 @@ for i=1:length(symb)
     phi_est(i+1)=(out_filtre+NCO_mem); % N(z)=1/(z-1) 
     NCO_mem=phi_est(i+1);
 end
+
 end

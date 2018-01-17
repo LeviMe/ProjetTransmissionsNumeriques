@@ -5,10 +5,17 @@
 \contentsline {section}{\numberline {4}Modulation-d\IeC {\'e}modulation}{2}
 \contentsline {section}{\numberline {5}Bruit canal}{2}
 \contentsline {section}{\numberline {6}Codage canal}{2}
-\contentsline {subsection}{\numberline {6.1}Code de Reed Solomon}{2}
+\contentsline {subsection}{\numberline {6.1}Code de Reed Solomon}{3}
 \contentsline {subsection}{\numberline {6.2}Entrelacement}{3}
 \contentsline {subsection}{\numberline {6.3}Code convolutif et poin\IeC {\c c}onnage}{3}
+<<<<<<< HEAD
 \contentsline {subsection}{\numberline {6.4}D\IeC {\'e}codage}{3}
 \contentsline {section}{\numberline {7}Retard de phase et correction}{4}
 \contentsline {section}{\numberline {8}Conclusion}{4}
 \contentsline {section}{\numberline {9}conclusion}{5}
+=======
+\contentsline {section}{\numberline {7}Retard de phase}{4}
+\contentsline {section}{\numberline {8}Correction du retard de phase}{5}
+\contentsline {section}{\numberline {9}Conclusion}{5}
+\contentsline {section}{\numberline {10}conclusion}{6}
+>>>>>>> 06916159ebef12d1284414988b0637102c967af2
