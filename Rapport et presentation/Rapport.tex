@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 
 \usepackage{amsmath,amssymb}
@@ -90,11 +90,14 @@ Ce projet de communication numérique vise à simuler sous Matlab une chaîne de
 \section{Organisation du travail}
 Nous étions un groupe de deux, alors plutôt que de travailler deux fois les mêmes choses, nous nous somme répartis les tâches à faire puisqu'elles étaient relativement indépendantes, puis avons mis en commun pour former la chaine entière. 
 \newline
-Cette répartition fut possible grâce à la structure modulaire du projet. 
+Cette répartition fut possible grâce à la structure modulaire du projet. Ainsi, Lévi a pu travailler dans la chaine de base à la modulation et démodulation. Pendant ce temps Jonathan a mis en place la structure du code et implémenté quelques fonctions extérieures (bruit du canal).
+Une fois la chaine de base faite, Lévi a implémenté les fonctions de codage et décodage pendant que Jonathan a implémenté l'erreur de phase et sa correction.
 
 \section{Structure du code}
+Un fichier main.m sert de point d'entrée au programme. Il contient dans un premier temps toutes les configurations pour le signal, le bruit, le codage, l'erreur et correction de phase. Dans un deuxième temps, il incorpore la chaine de transmission dans son entièreté, utilisant tels ou tels fonctions dépendant des paramètres de base. Les fonctions de bruits, codage, decodage, dephasage et correction de phase ont étés écrites séparement et sont appellées dans cette chaine. 
 
-\section{Chaine de base}
+
+%\section{Chaine de base}
 
 
 
@@ -110,6 +113,25 @@ L'implémentation de cette première partie se fait avec une chaine passe-bas é
 
 
 \section{Bruit canal}
+Le canal est supposé créant du bruit blanc gaussien. La fonction créée permet d
+
+\begin{lstun}
+	function [ signalBruite]= canal( dB, signal)
+	%CANAL simule l'ajout du bruit lors du passage du signal a travers le canal AWGN
+	%   Addition du bruit au signal avec le dB specifie
+	
+	%Calcul de la puissance du bruit : sigma_a = 1 (variance des symboles),
+	%et somme du carre de h... = 1 car on a norme
+	%Es=2*Eb donc sigma^2 = 1./(4.*Eb/N0)
+	% et Eb/N0dB = 10log(Eb/N0) d'ou Eb/n0 = 10^(dB/10)
+	Eb_N0 = 10^(dB/10);
+	sigma = 1 / (2 * 10 ^ (Eb_N0 / 10));
+	bruit_I = sqrt(sigma) * randn(1, length(signal));
+	bruit_Q = sqrt(sigma) * randn(1, length(signal));
+	bruit = bruit_I + 1j * bruit_Q;
+	signalBruite = signal + bruit;
+	end	
+\end{lstun}
 
 \section{Codage canal}
 
