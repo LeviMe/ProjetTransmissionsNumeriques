@@ -60,15 +60,18 @@ taux_d_erreurs_scode = [];
 % 	bits_decodes=Decodage(bits_decodes);
 %     bits_decodes = reshape(bits_decodes, [1, length(bits_decodes)]);
 
-for dB = 0:1:4
+for dB = 4:1:4
     %bits de base
     bits = [randi([0,1],1,nb_bits)];
+    fileID = fopen('bits.dat','w');
+    fprintf(fileID,'%f\n',bits);
+    fclose(fileID);
     
 	if (codagee) %codage utilise des vecteurs colonnes (taille,1)
         bits_code = reshape(bits, [length(bits), 1]);
 		bits_code=codage(bits_code, RS_encoding, interleaving, puncturing, convencoding);
         bits_code = reshape(bits_code, [1, length(bits_code)]);
-    else 
+    else
         bits_code = bits;
     end
     
@@ -78,10 +81,13 @@ for dB = 0:1:4
     bits_codeI = bits_code(1:2:end);
     bits_codeQ = bits_code(2:2:end);
     symbolesI = symboles(1:end/2);
+    fileID = fopen('bits_codeI.dat','w');
+    fprintf(fileID,'%f\n',bits_codeI);
+    fclose(fileID);
     symbolesQ = symboles(end/2+1:end);
     
     %Echantillonage du filtre de mise en forme en racine
-    % de cosinus surrelevé en vue de sa convolution par le signal d'entré.
+    % de cosinus surrelevï¿½ en vue de sa convolution par le signal d'entrï¿½.
     filtre_RCS=rcosdesign(0.35,10,Te,'sqrt');
     
     suite_diracs_ponderesI=[kron(symbolesI,[1,zeros(1,Ts-1)]),zeros(1,nb_bits*Ts)];
@@ -98,9 +104,15 @@ for dB = 0:1:4
 %     plot(signal_mis_en_formeI);
     
     signal_mis_en_forme = signal_mis_en_formeI + 1j* signal_mis_en_formeQ;
+    fileID = fopen('signalFormeI.dat','w');
+    fprintf(fileID,'%f\n',signal_mis_en_formeI);
+    fclose(fileID);
 
     %ajout du bruit du canal
     signalBruite = canal(dB, signal_mis_en_forme);
+    fileID = fopen('signalBruiteI.dat','w');
+    fprintf(fileID,'%f\n',real(signalBruite));
+    fclose(fileID);
     
 %     figure()
 %     title("")
@@ -108,6 +120,9 @@ for dB = 0:1:4
 
     %Demodulation
     signal_recu = filter(filtre_RCS, 1, signalBruite);
+    fileID = fopen('signalfiltreI.dat','w');
+    fprintf(fileID,'%f\n',real(signal_recu));
+    fclose(fileID);
 %     figure()
 %     title("recu")
 %     plot(real(signal_recu));
@@ -144,9 +159,12 @@ for dB = 0:1:4
         bits_decodes = reshape(bits_decides, [length(bits_decides), 1]);
 		bits_decodes=Decodage(bits_decodes, RS_encoding, interleaving, puncturing, convencoding);
         bits_decodes = reshape(bits_decodes, [1, length(bits_decodes)]);
-    else 
+    else
         bits_decodes = bits_decides;
-	end
+    end
+    fileID = fopen('bits_decodes.dat','w');
+    fprintf(fileID,'%f\n',bits_decodes);
+    fclose(fileID);
 
     taux_d_erreur=sum(abs(bits_decodes-bits))/nb_bits;
     taux_d_erreurs(length(taux_d_erreurs)+1) = taux_d_erreur;
