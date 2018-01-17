@@ -2,6 +2,9 @@
 bits=[randi([0,1],188*8,1)];
 %"size bits   "+int2str(size(bits));
 code = Codage(bits);
+code(43) = (1-code(43));
+code(8) = (1-code(8));
+code(60) = (1-code(60));
 %"size code   " +int2str(size(code));
 decode = Decodage(code);
 %"size decode "+int2str(size(decode));

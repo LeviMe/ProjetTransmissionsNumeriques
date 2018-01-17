@@ -37,10 +37,7 @@ Eb_sur_N0=10^(Eb_sur_N0_dB);
 
 %OU
 %Generation d'une suite de bits 0, 1 associee a un texte a envoyer
-bits = str2bin('Ce fut alors que le prisonnier se mit a chanter.
-Les paroles etaient en francais,mais meme ceux qui ne comprenaient pas
-la langue devinaient a sa plaintive melodie qu''il s''agissait
-d''un chant de tristesse et d''adieu ...').';
+bits = str2bin('Ce fut alors que le prisonnier se mit a chanter');
 nbbits=length(bits);
 %OU
 %Generation d'une suite de bits 0, 1 associee a une image a transmettre
@@ -229,7 +226,7 @@ bits_decides=(symboles_decides+1)/2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  CALCUL DU TEB (POUR LA VALEUR FIXEE DE Eb/N0)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TEB_SIMULE=sum(bits_decides!=bits)/nb_bits;
+%TEB_SIMULE=sum(bits_decides!=bits)/nb_bits;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  COMPARAISON DU TEB SIMULE ET DU TEB THEORIQUE

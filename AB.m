@@ -1,4 +1,3 @@
-%
 % This routine computes the filter parameters A and B
 % for a second order loop
 % The results are valid when the detector gain (G)is equal to 1

@@ -1,28 +1,176 @@
-function [bits_codes] = codage(bits)
-    print = "hello world"
-% 	bits_codes = bits;
-%     RS_encoding
-% 	if RS_encoding
-% 		% Le code RS est non-binaire, i.e. son entrée n'est pas composée de blocs de bits.
-% 		%L'exemple du tutoriel prenait exactement le même encodeur et appliquait sur les bits la fonction bi2de(data) qui selon toute évidence signifie une conversion binaire vers décimal. data étant alors un vecteur 188 x 8 de bits aléatoire, 8=log2(M=256). Les nombres décimaux à coder étaient -me semble-t-il- la valeur de l'octet formé par chacune des colonnes de data.
-% 		% Je dois réarranger mes données d'entrée afin de les coder selon l'énoncé c'est à dire également par bloc de 8 ; POur cela je dois:
-% 			% 1. Trouver la fonction de ré-arrangement de matrices n*1==> n/8 * 8
-% 			%	2. Appliquer bi2de
-% 		% Si correction est trouvé, l'appliquer de façon identique à la fonction de décodage. Et changer le nom des variables puisque la sortie n'est alors plus composée de bits.
-% 		symboles=bi2de(reshape(bits,8,[]));
-% 		%<==> bi2de(reshape(bits,[8,size(bits)/8]));
-% 		bits_codes = step(enc,symboles);
-% 	end
-% % L'entrelacement convolutif dépend de deux paramètres, la tailles des blocs à entrelacer que j'ai fixé ici à S=188 (il me semble que cette valeur soit correct) et le second appelé 'slope' dont les multiples définissent les retards de chacun des composants du bloc à coder. Je pense que son choix est arbitraire dans le cadre de ce projet, mais cela reste à verifier.
+
+% bits=[randi([0,1],188*8,1)];
+% "size bits   "+int2str(size(bits))
+% code = Codage(bits);
 % 
-% 	if interleaving
-% 		bits_codes = convintrlv(bits_codes, S,3);
-% 	end
-% 
-% 	if puncturing
-% 		bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
-% 	else
-% 		bits_codes = convenc(bits_codes,trellis);
-% 	end
+% "size code   " +int2str(size(code))
+% decode = Decodage(code);
+% "size decode "+int2str(size(decode))
+% isequal(decode, bits)
+% % [bits(1:30) decode(1:30)]
+
+function [bits_codes] = codage(bits, RS_encoding, interleaving, puncturing, convencoding)
+%     RS_encoding = 1;
+%     interleaving = 1;
+%     puncturing = 1;
+%     convencoding= 1; 
+    N = 255;
+    K = 239;
+    S = 188;
+    M = 256;
+    gp = rsgenpoly(N,K,[],0);
+    enc = comm.RSEncoder(N,K,gp,S);
+%     enc = comm.RSEncoder(N,K,gp,S, 'BitInput', true);
+    decoding_mode = 'hard'; %='soft'
+    puncturing_matrix = [1 1 0 1];
+    trellis = poly2trellis([7],[171 133]);
+    
+    nrows = 17; slope = 12; 
+    D = nrows*(nrows-1)*slope; 
+    
+    bits_codes=bits;
+    
+	if RS_encoding
+        symboles=bi2de(reshape(bits,[],8));
+		symboles_codes = step(enc,symboles);
+        bits_codes = reshape(de2bi(symboles_codes),[],1);
+    end
+    if interleaving
+		bits_codes = convintrlv([bits_codes;zeros(D,1)], nrows,slope);
+    end
+
+   % "size bits codes   "+int2str(size(bits_codes)) 
+    
+    if puncturing
+        bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
+    else 
+        if convencoding
+          %  "size 1   " +int2str(size(bits_codes))
+            bits_codes = convenc(bits_codes,trellis);
+          %  "size 2   " +int2str(size(bits_codes))
+        end
+    end
+    
 end
 
+
+% function [bits_decodes] = Decodage(bits_codes)
+%     %paramètres du code qui suit
+%      RS_encoding = 1;
+%      interleaving = 1;
+%      puncturing = 1;
+%      convencoding=1 ;
+%     N = 255;
+%     K = 239;
+%     S = 188;
+%     M = 256;
+%     gp = rsgenpoly(N,K,[],0);
+%     dec = comm.RSDecoder(N,K,gp,S);
+%     decoding_mode = 'hard'; %='soft'
+%     puncturing_matrix = [1 1 0 1];
+%     trellis = poly2trellis([7],[171 133]);
+%     
+%     nrows = 17; slope = 12; 
+%     D = nrows*(nrows-1)*slope; 
+%     
+%     bits_decodes=bits_codes;
+%     
+%     if puncturing
+% 		bits_decodes = vitdec(bits_decodes,trellis,3,'trunc',decoding_mode,puncturing_matrix);
+%     else
+%         if convencoding
+%            % "size 2'   " +int2str(size(bits_decodes))
+%             bits_decodes = vitdec(bits_decodes,trellis,3,'trunc',decoding_mode);
+%             %"size 1'   " +int2str(size(bits_decodes))
+%         end
+%     end
+%     
+% 	if interleaving
+% 		bits_decodes = convdeintrlv(bits_decodes,nrows,slope);
+%         bits_decodes=bits_decodes(D+1:end);
+%     end
+%     
+%     if RS_encoding
+%         
+% 		bits_decodes = step(dec,bits_decodes);
+% 	end
+% end
+ 
+% function [bits_codes] = codage(bits)
+%     RS_encoding = 1;
+%     interleaving = 0;
+%     puncturing = 1;
+%     convencoding= 1; 
+%     N = 255;
+%     K = 239;
+%     S = 188;
+%     M = 256;
+%     gp = rsgenpoly(N,K,[],0);
+%     enc = comm.RSEncoder(N,K,gp,S);
+%     decoding_mode = 'hard'; %='soft'
+%     puncturing_matrix = [1 1 0 1];
+%     trellis = poly2trellis([7],[171 133]);
+%     
+%     bits_codes=bits;
+%     
+% 	if RS_encoding
+%         symboles=bi2de(reshape(bits,[],8));
+% 		symboles_codes = step(enc,symboles);
+%         bits_codes = reshape(de2bi(symboles_codes),[],1);
+%     end
+%     if interleaving
+% 		bits_codes = convintrlv(bits_codes, 10,4);
+%     end
+% 
+%    % "size bits codes   "+int2str(size(bits_codes)) 
+%     
+%     if puncturing
+%         bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
+%     else 
+%         if convencoding
+%           %  "size 1   " +int2str(size(bits_codes))
+%             bits_codes = convenc(bits_codes,trellis);
+%           %  "size 2   " +int2str(size(bits_codes))
+%         end
+%     end
+%     
+% end
+% 
+% 
+% function [bits_decodes] = decodage(bits_codes)
+%     %paramètres du code qui suit
+%      RS_encoding = 1;
+%      interleaving = 0;
+%      puncturing = 1;
+%      convencoding=1 ;
+%     N = 255;
+%     K = 239;
+%     S = 188;
+%     M = 256;
+%     gp = rsgenpoly(N,K,[],0);
+%     dec = comm.RSDecoder(N,K,gp,S);
+%     decoding_mode = 'hard'; %='soft'
+%     puncturing_matrix = [1 1 0 1];
+%     trellis = poly2trellis([7],[171 133]);
+%  
+%     bits_decodes=bits_codes;
+%     
+%     if puncturing
+% 		bits_decodes = vitdec(bits_decodes,trellis,3,'trunc',decoding_mode,puncturing_matrix);
+%     else
+%         if convencoding
+%            % "size 2'   " +int2str(size(bits_decodes))
+%             bits_decodes = vitdec(bits_decodes,trellis,3,'trunc',decoding_mode);
+%             %"size 1'   " +int2str(size(bits_decodes))
+%         end
+%     end
+%     
+% 	if interleaving
+% 		bits_decodes = convdeintrlv(bits_decodes,10,4);
+%     end
+%     
+%     if RS_encoding
+%         
+% 		bits_decodes = step(dec,bits_decodes);
+% 	end
+% end
