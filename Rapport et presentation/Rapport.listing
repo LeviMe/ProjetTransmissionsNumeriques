@@ -1,6 +1,10 @@
-	%comment
-	if RS_encoding
-		symboles=bi2de(reshape(bits,[],8));
-		symboles_codes = step(enc,symboles);
-		bits_codes = reshape(de2bi(symboles_codes),[],1);
-	end
+puncturing_matrix = [1 1 0 1];
+trellis = poly2trellis([7],[171 133]);
+-------
+if puncturing
+	bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
+else
+if convencoding
+	bits_codes = convenc(bits_codes,trellis);
+end
+end

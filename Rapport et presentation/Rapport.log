@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2016.12.21)  17 JAN 2018 14:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2016.12.21)  17 JAN 2018 15:17
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -730,7 +730,11 @@ Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \tcb@temp=\box42
 \tcb@out=\write4
 \tcb@record@out=\write5
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+) (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
@@ -1201,17 +1205,24 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 )
 \openout4 = `Rapport.listing'.
 
- (Rapport.listing) [2] [3]
+ (Rapport.listing) [2]
+\openout4 = `Rapport.listing'.
+
+ (Rapport.listing)
+\openout4 = `Rapport.listing'.
+
+ (Rapport.listing)
+[3]
 PGFPlots: reading {fichier.txt}
  [4] (Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 29728 strings out of 493333
- 721071 string characters out of 3139190
- 932340 words of memory out of 3000000
- 32758 multiletter control sequences out of 15000+200000
+ 29825 strings out of 493333
+ 722313 string characters out of 3139190
+ 952626 words of memory out of 3000000
+ 32847 multiletter control sequences out of 15000+200000
  12693 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,103p,812b,1997s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,9n,103p,828b,1997s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
@@ -1223,7 +1234,7 @@ nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 sfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb>
-Output written on Rapport.pdf (4 pages, 145502 bytes).
+Output written on Rapport.pdf (4 pages, 151434 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
