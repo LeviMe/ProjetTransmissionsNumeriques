@@ -1,3 +1,4 @@
+	%comment
 	if RS_encoding
 		symboles=bi2de(reshape(bits,[],8));
 		symboles_codes = step(enc,symboles);

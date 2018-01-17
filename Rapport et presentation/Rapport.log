@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2016.12.21)  17 JAN 2018 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2016.12.21)  17 JAN 2018 14:44
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -419,84 +419,39 @@ Package: amsthm 2015/03/04 v2.20.2
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
-Package: geometry 2010/09/12 v5.6 Page Geometry
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\tcolorbox\tcolorbox.sty
+Package: tcolorbox 2016/10/21 version 3.95 text color boxes
+
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-c
+ommon.tex
+\pgfutil@everybye=\toks27
+\pgfutil@tempdima=\dimen112
+\pgfutil@tempdimb=\dimen113
+
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-c
+ommon-lists.tex))
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-l
+atex.def
+\pgfutil@abb=\box28
+ (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.co
+de.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.st
+y ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks27
+\KV@toks@=\toks28
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count99
-\Gm@cntv=\count100
-\c@Gm@tempcnt=\count101
-\Gm@bindingoffset=\dimen112
-\Gm@wd@mp=\dimen113
-\Gm@odd@mp=\dimen114
-\Gm@even@mp=\dimen115
-\Gm@layoutwidth=\dimen116
-\Gm@layoutheight=\dimen117
-\Gm@layouthoffset=\dimen118
-\Gm@layoutvoffset=\dimen119
-\Gm@dimlist=\toks28
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2016/04/23 3.9r The Babel package
-
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-french\frenchb.ldf"
-Language: frenchb 2016/05/14 v3.2c French support from the babel system
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2016/04/23 3.9r Babel common definitions
-\babel@savecnt=\count102
-\U@D=\dimen120
-)
-\l@acadian = a dialect from \language\l@french 
-\l@canadien = a dialect from \language\l@french 
-\FB@nonchar=\count103
-\FBcolonskip=\skip49
-\FBthinskip=\skip50
-Package babel Info: Making : an active character on input line 365.
-Package babel Info: Making ; an active character on input line 366.
-Package babel Info: Making ! an active character on input line 367.
-Package babel Info: Making ? an active character on input line 368.
-\FBguillskip=\skip51
-\FBguill@level=\count104
-\FB@everypar=\toks29
-\FB@Mht=\dimen121
-\std@mcc=\count105
-\dec@mcc=\count106
-\listindentFB=\skip52
-\labelwidthFB=\skip53
-\leftmarginFB=\skip54
-\parindentFFN=\dimen122
-\FBfnindent=\skip55
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\scalefnt.sty")
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplots.sty
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.revis
-ion.tex)
-Package: pgfplots 2016/08/10 v1.14 Data Visualization (1.14)
- ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
@@ -517,36 +472,11 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count107
+\Gread@gobject=\count99
 ))
-\Gin@req@height=\dimen123
-\Gin@req@width=\dimen124
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
 )
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.st
-y (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-c
-ommon.tex
-\pgfutil@everybye=\toks30
-\pgfutil@tempdima=\dimen125
-\pgfutil@tempdimb=\dimen126
-
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-c
-ommon-lists.tex))
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-l
-atex.def
-\pgfutil@abb=\box28
- (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.co
-de.tex
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
-))
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
-
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.st
-y
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.st
 y
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.
@@ -555,30 +485,30 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.c
 ode.tex
-\pgfkeys@pathtoks=\toks31
-\pgfkeys@temptoks=\toks32
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfi
 ltered.code.tex
-\pgfkeys@tmptoks=\toks33
+\pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen127
-\pgf@y=\dimen128
-\pgf@xa=\dimen129
-\pgf@ya=\dimen130
-\pgf@xb=\dimen131
-\pgf@yb=\dimen132
-\pgf@xc=\dimen133
-\pgf@yc=\dimen134
+\pgf@x=\dimen116
+\pgf@y=\dimen117
+\pgf@xa=\dimen118
+\pgf@ya=\dimen119
+\pgf@xb=\dimen120
+\pgf@yb=\dimen121
+\pgf@xc=\dimen122
+\pgf@yc=\dimen123
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count108
-\c@pgf@countb=\count109
-\c@pgf@countc=\count110
-\c@pgf@countd=\count111
-\t@pgf@toka=\toks34
-\t@pgf@tokb=\toks35
-\t@pgf@tokc=\toks36
+\c@pgf@counta=\count100
+\c@pgf@countb=\count101
+\c@pgf@countc=\count102
+\c@pgf@countd=\count103
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -596,8 +526,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyss
 oftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count112
-\pgfsyssoftpath@bigbuffer@items=\count113
+\pgfsyssoftpath@smallbuffer@items=\count104
+\pgfsyssoftpath@bigbuffer@items=\count105
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysp
 rotocol.code.tex
@@ -632,12 +562,12 @@ de.tex
 de.tex)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.
 code.tex
-\pgfmath@dimen=\dimen135
-\pgfmath@count=\count114
+\pgfmath@dimen=\dimen124
+\pgfmath@count=\count106
 \pgfmath@box=\box29
-\pgfmath@toks=\toks37
-\pgfmath@stack@operand=\toks38
-\pgfmath@stack@operation=\toks39
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctio
 ns.code.tex
@@ -659,37 +589,37 @@ ns.misc.code.tex)
 ns.integerarithmetics.code.tex)))
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.c
 ode.tex
-\c@pgfmathroundto@lastzeros=\count115
+\c@pgfmathroundto@lastzeros=\count107
 ))
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorep
 oints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen136
-\pgf@picmaxx=\dimen137
-\pgf@picminy=\dimen138
-\pgf@picmaxy=\dimen139
-\pgf@pathminx=\dimen140
-\pgf@pathmaxx=\dimen141
-\pgf@pathminy=\dimen142
-\pgf@pathmaxy=\dimen143
-\pgf@xx=\dimen144
-\pgf@xy=\dimen145
-\pgf@yx=\dimen146
-\pgf@yy=\dimen147
-\pgf@zx=\dimen148
-\pgf@zy=\dimen149
+\pgf@picminx=\dimen125
+\pgf@picmaxx=\dimen126
+\pgf@picminy=\dimen127
+\pgf@picmaxy=\dimen128
+\pgf@pathminx=\dimen129
+\pgf@pathmaxx=\dimen130
+\pgf@pathminy=\dimen131
+\pgf@pathmaxy=\dimen132
+\pgf@xx=\dimen133
+\pgf@xy=\dimen134
+\pgf@yx=\dimen135
+\pgf@yy=\dimen136
+\pgf@zx=\dimen137
+\pgf@zy=\dimen138
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorep
 athconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen150
-\pgf@path@lasty=\dimen151
+\pgf@path@lastx=\dimen139
+\pgf@path@lasty=\dimen140
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorep
 athusage.code.tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen152
-\pgf@shorten@start@additional=\dimen153
+\pgf@shorten@end@additional=\dimen141
+\pgf@shorten@start@additional=\dimen142
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcores
 copes.code.tex
@@ -697,19 +627,19 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count116
+\pgf@picture@serial@count=\count108
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreg
 raphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen154
+\pgflinewidth=\dimen143
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoret
 ransformations.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen155
-\pgf@pt@y=\dimen156
-\pgf@pt@temp=\dimen157
+\pgf@pt@x=\dimen144
+\pgf@pt@y=\dimen145
+\pgf@pt@temp=\dimen146
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreq
 uick.code.tex
@@ -726,13 +656,13 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorea
 rrows.code.tex
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen158
+\pgfarrowsep=\dimen147
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcores
 hade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen159
-\pgf@sys@shading@range@num=\count117
+\pgf@max=\dimen148
+\pgf@sys@shading@range@num=\count109
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorei
 mage.code.tex
@@ -767,13 +697,113 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp
 -version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen160
-\pgf@nodesepend=\dimen161
+\pgf@nodesepstart=\dimen149
+\pgf@nodesepend=\dimen150
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp
 -version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks38
+\verbatim@line=\toks39
+\verbatim@in@stream=\read2
+) (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)) (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count110
+)
+\tcb@titlebox=\box35
+\tcb@upperbox=\box36
+\tcb@lowerbox=\box37
+\tcb@phantombox=\box38
+\c@tcbbreakpart=\count111
+\c@tcblayer=\count112
+\tcolorbox@number=\count113
+\tcb@temp=\box39
+\tcb@temp=\box40
+\tcb@temp=\box41
+\tcb@temp=\box42
+\tcb@out=\write4
+\tcb@record@out=\write5
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count114
+\Gm@cntv=\count115
+\c@Gm@tempcnt=\count116
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks40
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2016/04/23 3.9r The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-french\frenchb.ldf"
+Language: frenchb 2016/05/14 v3.2c French support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count117
+\U@D=\dimen159
+)
+\l@acadian = a dialect from \language\l@french 
+\l@canadien = a dialect from \language\l@french 
+\FB@nonchar=\count118
+\FBcolonskip=\skip49
+\FBthinskip=\skip50
+Package babel Info: Making : an active character on input line 365.
+Package babel Info: Making ; an active character on input line 366.
+Package babel Info: Making ! an active character on input line 367.
+Package babel Info: Making ? an active character on input line 368.
+\FBguillskip=\skip51
+\FBguill@level=\count119
+\FB@everypar=\toks41
+\FB@Mht=\dimen160
+\std@mcc=\count120
+\dec@mcc=\count121
+\listindentFB=\skip52
+\labelwidthFB=\skip53
+\leftmarginFB=\skip54
+\parindentFFN=\dimen161
+\FBfnindent=\skip55
 ))
+("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\scalefnt.sty")
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplots.sty
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.revis
+ion.tex)
+Package: pgfplots 2016/08/10 v1.14 Data Visualization (1.14)
+
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.st
+y
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
 
@@ -790,8 +820,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 ex)
 \pgffor@iter=\dimen162
 \pgffor@skip=\dimen163
-\pgffor@stack=\toks40
-\pgffor@toks=\toks41
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
 ))
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 tikz.code.tex
@@ -800,7 +830,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrar
 yplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count118
+\pgf@plot@mark@count=\count122
 \pgfplotmarksize=\dimen164
 )
 \tikz@lastx=\dimen165
@@ -809,23 +839,23 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen168
 \tikzleveldistance=\dimen169
 \tikzsiblingdistance=\dimen170
-\tikz@figbox=\box35
-\tikz@figbox@bg=\box36
-\tikz@tempbox=\box37
-\tikz@tempbox@bg=\box38
-\tikztreelevel=\count119
-\tikznumberofchildren=\count120
-\tikznumberofcurrentchild=\count121
-\tikz@fig@count=\count122
+\tikz@figbox=\box43
+\tikz@figbox@bg=\box44
+\tikz@tempbox=\box45
+\tikz@tempbox@bg=\box46
+\tikztreelevel=\count123
+\tikznumberofchildren=\count124
+\tikznumberofcurrentchild=\count125
+\tikz@fig@count=\count126
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulema
 trix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count123
-\pgfmatrixcurrentcolumn=\count124
-\pgf@matrix@numberofcolumns=\count125
+\pgfmatrixcurrentrow=\count127
+\pgfmatrixcurrentcolumn=\count128
+\pgf@matrix@numberofcolumns=\count129
 )
-\tikz@expandcount=\count126
+\tikz@expandcount=\count130
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibrarytopaths.code.tex
@@ -835,12 +865,12 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 tex
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscore.c
 ode.tex
-\t@pgfplots@toka=\toks42
-\t@pgfplots@tokb=\toks43
-\t@pgfplots@tokc=\toks44
+\t@pgfplots@toka=\toks44
+\t@pgfplots@tokb=\toks45
+\t@pgfplots@tokc=\toks46
 \pgfplots@tmpa=\dimen171
-\c@pgfplots@coordindex=\count127
-\c@pgfplots@scanlineindex=\count128
+\c@pgfplots@coordindex=\count131
+\c@pgfplots@scanlineindex=\count132
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgfplotssy
 sgeneric.code.tex))
@@ -856,7 +886,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 \pgfplotsoldpgfsupp_pgflibraryfpu.code.tex)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib
 \pgfplotsoldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count129
+\c@pgfmathroundto@lastzeros=\count133
 ))
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsu
 til.code.tex
@@ -866,14 +896,14 @@ pgfplotsliststructure.code.tex)
 pgfplotsliststructureext.code.tex)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\
 pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count130
+\c@pgfplotsarray@tmp=\count134
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\
 pgfplotsmatrix.code.tex)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtable\pgfpl
 otstableshared.code.tex
-\c@pgfplotstable@counta=\count131
-\t@pgfplotstable@a=\toks45
+\c@pgfplotstable@counta=\count135
+\t@pgfplotstable@a=\toks47
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\
 pgfplotsdeque.code.tex)
@@ -885,7 +915,7 @@ inary.data.code.tex))
 til.verb.code.tex)
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgflibrar
 ypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count132
+\c@pgfplotslibrarysurf@no=\count136
 
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgflibrary
 pgfplots.surfshading.pgfsys-pdftex.def)))
@@ -922,11 +952,11 @@ corations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen174
 \pgfdecoratedinputsegmentremainingdistance=\dimen175
 \pgf@decorate@distancetomove=\dimen176
-\pgf@decorate@repeatstate=\count133
+\pgf@decorate@repeatstate=\count137
 \pgfdecorationsegmentamplitude=\dimen177
 \pgfdecorationsegmentlength=\dimen178
 )
-\tikz@lib@dec@box=\box39
+\tikz@lib@dec@box=\box47
 )
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibrarydecorations.pathmorphing.code.tex
@@ -936,7 +966,7 @@ ns\pgflibrarydecorations.pathmorphing.code.tex))
 libraries\tikzlibrarydecorations.pathreplacing.code.tex
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decoratio
 ns\pgflibrarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count134
+\pgfplots@numplots=\count138
 \pgfplots@xmin@reg=\dimen179
 \pgfplots@xmax@reg=\dimen180
 \pgfplots@ymin@reg=\dimen181
@@ -952,38 +982,7 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 yplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\tcolorbox\tcolorbox.sty
-Package: tcolorbox 2016/10/21 version 3.95 text color boxes
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks46
-\verbatim@line=\toks47
-\verbatim@in@stream=\read2
-)
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\environ\environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\trimspaces\trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)) (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count135
-)
-\tcb@titlebox=\box40
-\tcb@upperbox=\box41
-\tcb@lowerbox=\box42
-\tcb@phantombox=\box43
-\c@tcbbreakpart=\count136
-\c@tcblayer=\count137
-\tcolorbox@number=\count138
-\tcb@temp=\box44
-\tcb@temp=\box45
-\tcb@temp=\box46
-\tcb@temp=\box47
-\tcb@out=\write4
-\tcb@record@out=\write5
-) (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+(C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
 \lst@mode=\count139
 \lst@gtempboxa=\box48
 \lst@token=\toks48
@@ -1061,68 +1060,19 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (Rapport.aux)
 \openout1 = `Rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
-* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=483.69687pt
-* \textheight=731.23584pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-52.36449pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=11.0pt
-* \footskip=30.0pt
-* \marginparwidth=50.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Info: Redefining \degres on input line 60.
-LaTeX Info: Redefining \dots on input line 60.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 60.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
-LaTeX Info: Redefining \up on input line 60.
-
-
-Package frenchb.ldf Warning: OT1 encoding should not be used for French.
-(frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 60.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+ ABD: EveryShipout initializing macros
 (C:\Users\LeviMe\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count149
@@ -1165,31 +1115,76 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-ABD: EveryShipout initializing macros
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \degres on input line 66.
+LaTeX Info: Redefining \dots on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+LaTeX Info: Redefining \up on input line 66.
+
+
+Package frenchb.ldf Warning: OT1 encoding should not be used for French.
+(frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(frenchb.ldf)                of your document, on input line 66.
+
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 60.
+ on input line 66.
 
 \c@lstlisting=\count155
-LaTeX Font Info:    Try loading font information for U+msa on input line 61.
+LaTeX Font Info:    Try loading font information for U+msa on input line 67.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 61.
+LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 61.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 67.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 66.
- (Rapport.toc)
+) (Rapport.toc)
 \tf@toc=\write6
 \openout6 = `Rapport.toc'.
 
@@ -1210,27 +1205,27 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 PGFPlots: reading {fichier.txt}
  [4] (Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 29729 strings out of 493333
- 721114 string characters out of 3139190
- 931138 words of memory out of 3000000
- 32757 multiletter control sequences out of 15000+200000
- 13052 words of font info for 51 fonts, out of 3000000 for 9000
+ 29728 strings out of 493333
+ 721071 string characters out of 3139190
+ 932340 words of memory out of 3000000
+ 32758 multiletter control sequences out of 15000+200000
+ 12693 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,103p,835b,1997s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,9n,103p,812b,1997s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Rapport.pdf (4 pages, 160787 bytes).
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
+.pfb>
+Output written on Rapport.pdf (4 pages, 145502 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
