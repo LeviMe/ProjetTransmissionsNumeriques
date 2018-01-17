@@ -4,7 +4,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm,mathrsfs}
 \usepackage{tcolorbox}
-
+\usepackage{url}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage[francais]{babel}
 \newcommand{\ds}{\displaystyle}
@@ -86,8 +86,7 @@ Ce projet de communication numérique vise à simuler sous Matlab une chaîne de
 \section{Organisation du travail}
 Nous étions un groupe de deux, alors plutôt que de travailler deux fois les mêmes choses, nous nous somme répartis les tâches à faire puisqu'elles étaient relativement indépendantes, puis avons mis en commun pour former la chaine entière.
 \newline
-Cette répartition fut possible grâce à la structure modulaire du projet.
-
+Cette répartition fut possible grâce à la structure modulaire du projet. Toutes les opérations ont été effectué via la platforme Github, avec un dépot visible à l'adresse suivante \url{https://github.com/LeviMe/ProjetTransmissionsNumeriques}.
 \section{Structure du code}
 
 \section{Chaine de base}
@@ -114,8 +113,10 @@ Le codage canal se décompose en plusieurs parties que sont dans l'ordre:
 	\item Un entrelaceur conforme au standard DVB-S c'est à dire de \emph{paramètres} $17$ et $12$.
 	\item Un code convolutif de polynômes générateur $171, 133$, qui est poinçonné via la matrice $[1,1,0,1]$.
 \end{enumerate}
-\ \\
-Toutes ces fonctions sont implémentés dans une seule est même fonction \texttt{codage} qui prend un vecteur de \texttt{bits} et tous les interrupteurs relatifs aux étapes de son fonctionnement et renvoie le vecteur codé.
+
+Toutes ces fonctions sont implémentés dans une seule est même fonction \texttt{codage} qui prend un vecteur de \texttt{bits} et tous les interrupteurs relatifs aux étapes de son fonctionnement et renvoie le vecteur codé. \\
+Le fonctionnement par étapes consiste à initialiser un \texttt{bits\_codes}
+à \texttt{bits} et à lui faire subir toutes les opérations de codages suivant la configuration d'interrupteurs choisie. C'est lui qui sera renvoyé en sortie de la fonction.
 
 \begin{lstun}
 function [bits_codes] = codage(bits, RS_encoding, interleaving, puncturing, convencoding)
@@ -131,6 +132,36 @@ Ce vecteur sera encodé pour donner un vecteur \texttt{symboles\_codes} puis à 
 		symboles_codes = step(enc,symboles);
 		bits_codes = reshape(de2bi(symboles_codes),[],1);
 	end
+\end{lstun}
+
+\subsection{Entrelacement}
+L'entrelacement au standard DVB-S fonctionne avec deux paramètres appelés \texttt{nrows} et \texttt{slope} qui signifient ------------ et dont la valeur est fixée respectivement à 17 et 12. \\ De ces paramètres dépens la valeur du padding à introduire pour obtenir une transmission sans erreur notée \texttt{D}.
+
+\begin{lstun}
+	nrows = 17; slope = 12;
+	D = nrows*(nrows-1)*slope;
+	...
+	if interleaving
+	bits_codes = convintrlv([bits_codes;zeros(D,1)], nrows,slope);
+	end
+\end{lstun}
+
+\subsection{Code convolutif et poinçonnage}
+Le code convolutif requis par l'énoncé de paramètres $(7,1/2)$ et de polynômes générateurs $g_1=171_{oct}$ et  $g_2=133_{oct}$. \\
+La syntaxe de son implémentation Matlab se fait via la création d'un objet d'encodage \texttt{trellis} qui peut accueillir ou non une matrice de poinçonnage. C'est ce qui est fait dans le code suivant où les deux configurations sont envisagées. \\
+On aurait également pu procéder en l'absence de poinçonnage avec une matrice $[1,1,1,1]$, c'est à dire celle qui conserve le signal de départ.
+
+\begin{lstun}
+puncturing_matrix = [1 1 0 1];
+trellis = poly2trellis([7],[171 133]);
+-------
+if puncturing
+	bits_codes = convenc(bits_codes,trellis,puncturing_matrix);
+else
+if convencoding
+	bits_codes = convenc(bits_codes,trellis);
+end
+end
 \end{lstun}
 
 
