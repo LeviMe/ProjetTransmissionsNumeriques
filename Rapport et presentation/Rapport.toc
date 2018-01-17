@@ -1,11 +1,14 @@
 \select@language {french}
 \contentsline {section}{\numberline {1}Organisation du travail}{1}
 \contentsline {section}{\numberline {2}Structure du code}{2}
-\contentsline {section}{\numberline {3}Modulation-d\IeC {\'e}modulation}{2}
-\contentsline {section}{\numberline {4}Bruit canal}{2}
-\contentsline {section}{\numberline {5}Codage canal}{2}
-\contentsline {subsection}{\numberline {5.1}Code de Reed Solomon}{3}
-\contentsline {section}{\numberline {6}Retard de phase}{3}
-\contentsline {section}{\numberline {7}Correction du retard de phase}{4}
-\contentsline {section}{\numberline {8}Conclusion}{4}
-\contentsline {section}{\numberline {9}conclusion}{5}
+\contentsline {section}{\numberline {3}Chaine de base}{2}
+\contentsline {section}{\numberline {4}Modulation-d\IeC {\'e}modulation}{2}
+\contentsline {section}{\numberline {5}Bruit canal}{2}
+\contentsline {section}{\numberline {6}Codage canal}{2}
+\contentsline {subsection}{\numberline {6.1}Code de Reed Solomon}{3}
+\contentsline {subsection}{\numberline {6.2}Entrelacement}{3}
+\contentsline {subsection}{\numberline {6.3}Code convolutif et poin\IeC {\c c}onnage}{3}
+\contentsline {section}{\numberline {7}Retard de phase}{4}
+\contentsline {section}{\numberline {8}Correction du retard de phase}{5}
+\contentsline {section}{\numberline {9}Conclusion}{5}
+\contentsline {section}{\numberline {10}conclusion}{6}
